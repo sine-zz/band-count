@@ -1,4 +1,4 @@
-Show count: 55
+Show Count: 55
 Band Count: 74
 
 Count	Band
