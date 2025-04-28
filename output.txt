@@ -1,8 +1,8 @@
 Show Count: 55
-Band Count: 74
+Band Count: 73
 
 Count	Band
-15	Vehicle Dynamics
+16	Vehicle Dynamics
 10	Stateparks
 6	Teaze
 5	Pullstring
@@ -73,6 +73,5 @@ Count	Band
 1	Josh Sky
 1	Back Alley Business
 1	Ella Voloshen
-1	Vehicle Dyanamics
 1	Mainstreet Blake
 1	Elise O'Ragan
