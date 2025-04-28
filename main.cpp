@@ -28,7 +28,7 @@ int main(){
     }
 
     while(getline(shows, curLine)){ //start working through the file top-to-bottom
-        if(!curLine.empty() && isNum(curLine.at(0))) numshows++; //first = curLine.at(0);
+        if(!curLine.empty() && isNum(curLine.at(0))) numshows++;
 
         else if(curLine.size() > 1){ //if line isn't a date, assume contents are a band name
             for(i=0; i<sizeof(bands); i++){
