@@ -46,8 +46,8 @@ int main(){
         }
     }
 
-    cout << "Show count: " << numshows << endl;
-    bandsOut << "Show count: " << numshows << endl;
+    cout << "Show Count: " << numshows << endl;
+    bandsOut << "Show Count: " << numshows << endl;
 
     for(i=0; !bands[i].name.empty(); i++){
     }
