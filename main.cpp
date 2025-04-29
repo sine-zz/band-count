@@ -57,6 +57,7 @@ int main(){
     bandsOut << "Band Count: " << numbands << "\n\n";
     bandsOut <<"Count\tBand\n";
 
+    /* Sort bands by most played to least played */
     band tempBand;
     for(int i=0; i<numbands; i++){
         if(bands[i].shows < bands[i+1].shows){
