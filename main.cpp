@@ -2,8 +2,7 @@
 #include <fstream>
 using namespace std;
 
-bool isNum(char num);
-bool isDate(string str); //TODO: Implement and replace isNum
+bool isDate(string str);
 
 int main(){
     int numshows = 0;
@@ -27,10 +26,10 @@ int main(){
         return 0;
     }
 
-    while(getline(shows, curLine)){ //start working through the file top-to-bottom
-        if(!curLine.empty() && isNum(curLine.at(0))) numshows++;
+    while(getline(shows, curLine)){ //start working through the file
+        if(!curLine.empty() && isDate(curLine)) numshows++; //check if current line is a date
 
-        else if(curLine.size() > 1){ //if line isn't a date, assume contents are a band name
+        else if(curLine.size() > 1){ //if current line isn't a date or newline, assume contents are a band name
             for(i=0; i<sizeof(bands); i++){
                 if(bands[i].name == curLine) {
                         bands[i].shows++;
@@ -49,6 +48,7 @@ int main(){
     cout << "Show Count: " << numshows << endl;
     bandsOut << "Show Count: " << numshows << endl;
 
+    /* Count bands */
     for(i=0; !bands[i].name.empty(); i++){
     }
     numbands = i;
@@ -57,6 +57,7 @@ int main(){
     bandsOut << "Band Count: " << numbands << "\n\n";
     bandsOut <<"Count\tBand\n";
 
+    /* Sort bands by most played to least played */
     band tempBand;
     for(int i=0; i<numbands; i++){
         if(bands[i].shows < bands[i+1].shows){
@@ -67,6 +68,7 @@ int main(){
         }
     }
 
+    /* Print list */
     for(i=0; !bands[i].name.empty(); i++){
         cout << bands[i].shows << "\t" << bands[i].name << endl;
         bandsOut << bands[i].shows << "\t" << bands[i].name << endl;
@@ -78,20 +80,16 @@ int main(){
 }
 
 
-bool isNum(char num){
-    if(num=='1' ||
-       num=='2' ||
-       num=='3' ||
-       num=='4' ||
-       num=='5' ||
-       num=='6' ||
-       num=='7' ||
-       num=='8' ||
-       num=='9' ||
-       num=='0')return 1;
-    else return 0;
-}
-
 bool isDate(string str){
+    int slashes = 0;
+    char cur;
+
+    for(int i=0; i<str.length(); i++){
+        if(str[i]=='/'){
+            slashes++;
+        }
+        if(slashes==2) return 1;
+    }
+
     return 0;
 }
