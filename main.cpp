@@ -68,6 +68,7 @@ int main(){
         }
     }
 
+    /* Print list */
     for(i=0; !bands[i].name.empty(); i++){
         cout << bands[i].shows << "\t" << bands[i].name << endl;
         bandsOut << bands[i].shows << "\t" << bands[i].name << endl;
